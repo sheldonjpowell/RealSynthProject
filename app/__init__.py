@@ -22,7 +22,7 @@ app.register_blueprint(auth)
 from app.blueprints.api import api 
 app.register_blueprint(api)
 
-from app.blueprints.home import home 
-app.register_blueprint(home)
+from app.blueprints.desc import desc 
+app.register_blueprint(desc)
 
 from app import routes

@@ -41,7 +41,7 @@ def login():
         if user and user.check_password(password):
             login_user(user)
             flash(f"{user} has successfully logged in.", "success")
-            return redirect(url_for('home.index'))
+            return redirect(url_for('desc.index'))
         else:
             flash("Username and/or password is incorrect.")
     return render_template('login.html', title=title, form=form)
@@ -51,4 +51,4 @@ def login():
 def logout():
     logout_user()
     flash("You have successfully logged out.", "success")
-    return redirect(url_for('home.index'))
+    return redirect(url_for('desc.index'))
