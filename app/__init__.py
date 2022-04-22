@@ -19,6 +19,9 @@ login.login_message_category = 'danger'
 from app.blueprints.auth import auth 
 app.register_blueprint(auth)
 
+from app.blueprints.api import api 
+app.register_blueprint(api)
+
 from app.blueprints.home import home 
 app.register_blueprint(home)
 
