@@ -17,4 +17,4 @@ def about():
 def synth():
     title = 'synth'
 
-    return render_template('synth.html', title = title)
+    return render_template('synth_test.html', title = title)

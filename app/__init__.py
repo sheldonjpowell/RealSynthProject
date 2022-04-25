@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate 
-from flask_login import LoginManager 
+from flask_login import LoginManager
+from flask_cors import CORS 
 from config import Config 
 
 app = Flask(__name__)
@@ -15,6 +16,8 @@ migrate = Migrate(app, db, compare_type=True)
 login = LoginManager(app)
 login.login_view = 'auth.login' # Set this to your login page
 login.login_message_category = 'danger'
+
+CORS(app)
 
 from app.blueprints.auth import auth 
 app.register_blueprint(auth)

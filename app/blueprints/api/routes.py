@@ -11,6 +11,7 @@ def index():
     token = user.get_token()
     return jsonify({'token': token, 'expiration': user.token_expiration})
 
+# create user
 @api.route('/user/create', methods=['POST'])
 def create_user():
     if not request.is_json:
@@ -22,6 +23,9 @@ def create_user():
     username = data['username']
     email = data['email']
     password = data['password']
+    user_with_that_info = User.query.filter((User.username==username)|(User.email==email)).all()
+    if user_with_that_info:
+        return jsonify({'error': 'A user with that username and/or email already exists'})
     new_user = User(username=username, email=email, password=password)
     return jsonify(new_user.to_dict()),201
 
