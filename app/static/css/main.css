@@ -14,7 +14,13 @@ body {
     margin: 0;
   }
 
-
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: green;
+}
 
 :root {
     --keyboard: hsl(61, 100%, 35%);

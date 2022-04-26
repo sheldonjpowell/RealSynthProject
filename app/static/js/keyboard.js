@@ -516,10 +516,50 @@ document.addEventListener("keydown", (e) => {
 /////////////////////////////////////////////
 
 
-const presets = {
-    
 
+
+let volumeSlider = document.querySelector('input[className="volumeSlider"').value;
+    //   volumeSlider = parseFloat(volumeSlider)
+      console.log(`Volume: ${volumeSlider}`)
+
+let octSlider = document.querySelector('input[className="octSlider"').value;
+    //   octSlider = parseFloat(octSlider)
+      console.log(`Octave: ${octSlider}`)
+
+let attackSlider = document.querySelector('input[className="attackSlider"').value;
+    //   attackSlider = parseFloat(attackSlider)
+      console.log(`Attack: ${attackSlider}`)
+
+let decaySlider = document.querySelector('input[className="decaySlider"').value;
+    //   decaySlider = parseFloat(decaySlider)
+      console.log(`Decay: ${decaySlider}`)
+
+let sustainSlider = document.querySelector('input[className="sustainSlider"').value;
+    //   sustainSlider = parseFloat(sustainSlider)
+      console.log(`Sustain: ${sustainSlider}`)
+
+let releaseSlider = document.querySelector('input[className="releaseSlider"').value;
+    //   releaseSlider = parseFloat(releaseSlider)
+      console.log(`Release: ${releaseSlider}`)
+
+let waveSlider = document.querySelector('input[className="waveSlider"').value;
+    //   waveSlider = parseFloat(waveSlider)
+      console.log(`Waveform: ${waveSlider}`)
+
+const presets = {
+    Volume: volumeSlider,
+    Octave: octSlider,
+    Attack: attackSlider,
+    Decay: decaySlider,
+    Sustain: sustainSlider,
+    Release: releaseSlider,
+    Waveform: waveSlider
 }
+function saveMe(numbers){
+    console.log()
+}
+
+console.log(presets)
 
 
 

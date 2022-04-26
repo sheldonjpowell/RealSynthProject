@@ -1,4 +1,5 @@
 from . import desc
+from .forms import SliderForm
 from flask import render_template
 
 @desc.route('/')
@@ -15,6 +16,9 @@ def about():
     
 @desc.route('/synth')
 def synth():
+    # Presets = {}
     title = 'synth'
+    form = SliderForm()
+    
 
-    return render_template('synth_test.html', title = title)
+    return render_template('synth_test.html', title = title, form=form)

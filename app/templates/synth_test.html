@@ -4,47 +4,59 @@
     <body>
 
 
-        <!-- KEYBOARD AND NOTES -->
+        {{ form.csrf_token }}
         <div class="container">
             <div class="">
                 
                 <!--  VOLUME   -->
                 <div class="col-lg-2">
                     <p class="ms-4">Volume</p>
-                    <input className="volumeSlider" id="volume" type="range" min="0" max=".1" step=".001" value=".05"><br>
+                    {{ form.volume(className='volumeSlider',id='volume',min="0", max=".1", step=".001", value=".05")}}
                 </div>
                 
                 <!--  OCTAVE   -->
                 <div class="col-lg-2">
                     <p class="ms-4 mt-2">+ OCTAVE -</p>
-                    <input className="octSlider" id="oct" type="range" min="0" max="2" step="1" value="1"> 
+                    {{ form.octave(className='octSlider',id='oct',min="0", max="2", step="1", value="1")}}
                 </div>
                 <div class="col-lg-2">
-                    <!-- ADSR -->
+                    <!-- ATTACK -->
                     <p class="ms-4 mt-2">ATTACK</p>
-                    <input className="attackSlider" type="range" min=".001" max=".5" step="0.001" value=".3">  
+                    {{ form.attack(className='attackSlider',id='attk',min=".001", max=".5", step="0.001", value=".3")}}
                 </div>
+                <!-- DECAY -->
                 <div class="col-lg-2">
                     <p class="ms-4 mt-2">DECAY</p>
-                    <input className="decaySlider" type="range" min=".001" max=".3" step="0.01" value="1">
+                    {{ form.decay(className='decaySlider',id='dcay',min=".001", max=".3", step="0.01", value="1")}}
                 </div>
+                <!-- SUSTAIN -->
                 <div class="col-lg-2">
                     <p class="ms-4 mt-2">SUSTAIN</p>
-                    <input className="sustainSlider" type="range" min="400" max="200000" step="1" value="200"> 
+                    {{ form.sustain(className='sustainSlider',id='sus',min="400", max="200000", step="1", value="200")}}
                 </div>
+                <!-- RELEASE -->
                 <div class="col-lg-2">
                     <p class="ms-4 mt-2">RELEASE</p>
-                    <input className="releaseSlider" type="range" min="0.5" max="2.5" step="0.01" value="1">   
+                    {{ form.release(className='releaseSlider',id='reles',min="0.5", max="2.5", step="0.01", value="1")}}
                 </div>
                 <div class="col-lg-2">
                     <!-- THIS IS WAVEFORM SLIDER -->
                     <p class="ms-4 mt-2">WAVEFORM</p>
-                    <input className="waveSlider" type="range" min="0" max=".75" step="0.25" value=".50">
+                    {{ form.waveforms(className='waveSlider',min="0", max=".75", step="0.25", value=".50")}}
                 </div>
             </div>
         </div>
 
 
+
+        
+        <button id="save"type="button" class="btn btn-success">Save</button>
+        <button id="delete"type="button" class="btn btn-success">Delete</button>
+        <button id="apply"type="button" class="btn btn-success">Apply</button>
+
+
+
+         <!-- KEYBOARD AND NOTES -->
         <ul id="keyboard">
             <li note="C" class="white">A</li>
             <li note="C#" class="black">W</li>
@@ -63,9 +75,17 @@
             <li note="D2" class="white offset">L</li>
             <li note="D#2" class="black">P</li>
             <li note="E2" class="white offset">;</li>
-          </ul>
+        </ul>
+
+          <!-- PRESETS -->
+        
+
+       
 
 
+          
+          
+          
           
           
           
