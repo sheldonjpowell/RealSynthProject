@@ -16,6 +16,7 @@ class Presets(db.Model, UserMixin):
     release = db.Column(db.Float(5), unique=False, nullable=False)
     waveforms = db.Column(db.Float(5), unique=False, nullable=False)
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    preset_number = db.Column(db.Integer)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -31,5 +32,7 @@ class Presets(db.Model, UserMixin):
 
     def update(self):
         db.session.update()
+
+   
 
 

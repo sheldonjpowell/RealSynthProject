@@ -211,7 +211,7 @@ const playKey = (key) => {
 
     osc.connect(noteGainNode);
     let inputSlider = document.querySelector('input[className="waveSlider"').value;
-    console.log(inputSlider)
+    console.log(`InputSlider: ${inputSlider}`)
     osc.type = WAVEFORMS[inputSlider]
 
     

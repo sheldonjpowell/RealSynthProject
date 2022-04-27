@@ -2,59 +2,59 @@
 
     {% block content %}
     <body>
-
-
+        
+        
         <div>
-
             <select>
                 {% for p in preset %}
                 <option value="{{ p }}">{{ p }}</option>
                 {% endfor %}
             </select>
         </div>
-
+        
         <form action="" method="post">
-        {{ form.csrf_token }}
-
+            {{ form.csrf_token }}
+            
+            {{form.dropdown}}
             <div class="container">
                 <div class="">
-                    
+                    <!-- IF YOU EDIT VALUE PARAMETERS GO TO FORMS AND STATIC -->
                     <!--  VOLUME   -->
                     <div class="col-lg-2">
                         <div class="col-lg-2">
                             <p class="ms-4">Volume</p>
-                            {{ form.volume(className='volumeSlider',id='volume',min="0", max=".1", step=".001", value="preset.volume")}}
+                            {{ form.volume(className='volumeSlider',id='volume',min="0", max=".1", step=".001", value=preset.volume)}}
                         </div>
                         
                         <!--  OCTAVE   -->
                         <div class="col-lg-2">
                             <p class="ms-4 mt-2">+ OCTAVE -</p>
-                            {{ form.octave(className='octSlider',id='oct',min="0", max="2", step="1", value="preset.octave")}}
+                            {{ form.octave(className='octSlider',id='oct',min="0", max="2", step="1", value=preset.octave)}}
                         </div>
                         <div class="col-lg-2">
                             <!-- ATTACK -->
                             <p class="ms-4 mt-2">ATTACK</p>
-                            {{ form.attack(className='attackSlider',id='attk',min=".001", max=".5", step="0.001", value="preset.attack")}}
+                            {{ form.attack(className='attackSlider',id='attk',min=".001", max=".5", step="0.001", value=preset.attack)}}
                         </div>
                         <!-- DECAY -->
                         <div class="col-lg-2">
                             <p class="ms-4 mt-2">DECAY</p>
-                            {{ form.decay(className='decaySlider',id='dcay',min=".001", max=".3", step="0.01", value="preset.decay")}}
+                            {{ form.decay(className='decaySlider',id='decay',min=".001", max=".3", step="0.01", value=preset.decay)}}
                         </div>
                         <!-- SUSTAIN -->
                         <div class="col-lg-2">
                             <p class="ms-4 mt-2">SUSTAIN</p>
-                            {{ form.sustain(className='sustainSlider',id='sus',min="400", max="200000", step="1", value="preset.sustain")}}
+                            {{ form.sustain(className='sustainSlider',id='sus',min="400", max="200000", step="1", value=preset.sustain)}}
                         </div>
                         <!-- RELEASE -->
                         <div class="col-lg-2">
                             <p class="ms-4 mt-2">RELEASE</p>
-                            {{ form.release(className='releaseSlider',id='reles',min="0.5", max="2.5", step="0.01", value="preset.release")}}
+                            {{ form.release(className='releaseSlider',id='reles',min="0.5", max="2.5", step="0.01", value=preset.release)}}
                         </div>
                         <div class="col-lg-2">
                             <!-- THIS IS WAVEFORM SLIDER -->
                             <p class="ms-4 mt-2">WAVEFORM</p>
-                            {{ form.waveforms(className='waveSlider',min="0", max=".75", step="0.25", value="preset.waveforms")}}
+                            {{ form.waveforms(className='waveSlider',min="0", max="3", step="1", value=preset.waveforms)}}
                     </div>
                 </div>
             </div>

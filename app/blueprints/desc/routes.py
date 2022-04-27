@@ -1,6 +1,6 @@
 from crypt import methods
-import wave
 from . import desc
+from app import db
 from .forms import SliderForm
 from flask_login import login_required, current_user
 from .models import Presets
@@ -22,14 +22,19 @@ def about():
     
     
 @desc.route('/synth', methods = ['GET', 'POST'])
+# @desc.route('/synth/<preset_id>', methods = ['GET', 'POST'])
 @login_required 
 def synth():
+    # print(preset_id)
     # Presets = {}
     title = 'synth'
     form = SliderForm()
+    # presets = Presets.query.get(id)
 
+
+    print('hello')
     if form.validate_on_submit():
-        print('sup')
+        
         volume = form.volume.data
         octave = form.octave.data
         attack = form.attack.data
@@ -40,13 +45,27 @@ def synth():
         save = form.save.data
         apply = form.apply.data
         delete = form.delete.data
-        print("sup")
+        dropdown = int(form.dropdown.data)
+        
         print(f'Save: {save} Apply: {apply} Delete: {delete}')
         if save == True:
             user = User.query.first()
-            p = Presets(user_id=current_user.id, volume=volume, octave=octave, attack=attack, decay=decay, sustain=sustain, release= release, waveforms=waveforms)
-            a = user.preset.all()
-            print(a)
+            check = Presets.query.filter_by(user_id = current_user.id).filter_by(preset_number=dropdown).first()
+            print(check,'SOMTHING RANDOM')
+            if check:
+                check.volume=volume 
+                check.octave=octave 
+                check.attack=attack 
+                check.decay=decay 
+                check.sustain=sustain
+                check.release=release
+                check.waveforms=waveforms
+                db.session.commit()
+            else:
+                p = Presets(user_id=current_user.id, volume=volume, octave=octave, attack=attack, decay=decay, sustain=sustain, release= release, waveforms=waveforms, preset_number=dropdown)
+                # a = user.preset.all()
+            
+            
             # print(p, volume, octave, attack, decay, sustain,release,waveforms)
         elif apply == True:
             
@@ -58,6 +77,7 @@ def synth():
     
 
     preset = current_user.preset.all()
+    # presets = Presets.query.get()
     print(preset)
 
     return render_template('synth_test.html', title = title, form=form, preset=preset)
