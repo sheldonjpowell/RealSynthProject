@@ -2,3 +2,4 @@ synth_venv/
 __pycache__/
 .env
 app.db
+.DS_Store

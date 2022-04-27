@@ -24,7 +24,12 @@ class Presets(db.Model, UserMixin):
 
 
     def delete(self):
+        # when delete button is clicked  and you have a preset selected 
+
         db.session.delete(self)
         db.session.commit() 
+
+    def update(self):
+        db.session.update()
 
 

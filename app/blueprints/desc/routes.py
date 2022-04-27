@@ -45,7 +45,8 @@ def synth():
         if save == True:
             user = User.query.first()
             p = Presets(user_id=current_user.id, volume=volume, octave=octave, attack=attack, decay=decay, sustain=sustain, release= release, waveforms=waveforms)
-            user.preset.all()
+            a = user.preset.all()
+            print(a)
             # print(p, volume, octave, attack, decay, sustain,release,waveforms)
         elif apply == True:
             
@@ -53,10 +54,10 @@ def synth():
 
         elif delete == True:
             p = Presets(user_id=current_user.id, volume=volume, octave=octave, attack=attack, decay=decay, sustain=sustain, release= release, waveforms=waveforms)
-            print(p.query.all())
+            print(p.query.filter_by())
     
 
     preset = current_user.preset.all()
-    # print(preset)
+    print(preset)
 
     return render_template('synth_test.html', title = title, form=form, preset=preset)
