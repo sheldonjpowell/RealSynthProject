@@ -47,6 +47,7 @@ footer {
   user-select: none;
   cursor: pointer;
 }
+
 #keyboard li:first-child {
     border-radius: 5px 0 5px 5px;
   }
@@ -104,9 +105,15 @@ footer {
     margin: 0 0 0 -1rem;
   }
 
+#keyboard, .white, .black{
+  position: relative;
+  left: 30px;
+  top: 60px;
+}
+
 #keyboard {
-    height: 15.25rem;
-    width: 41rem;
+    height: 19.25rem;
+    width: 45rem;
     margin: 0.5rem auto;
     padding: 3rem 0 0 3rem;
     position: relative;
@@ -116,3 +123,17 @@ footer {
     box-shadow: 0 0 50px var(--black-50) inset, 0 1px var(--keyboard-shadow) inset,
       0 5px 15px var(--black-50);
   }
+
+  select {
+    width: 400px;
+    min-width: 35px;
+    height: 40px;
+    background: rgb(75, 63, 63);
+    color: white;
+    text-align: center;
+    border: 2px solid white;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 20px;
+}

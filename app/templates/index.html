@@ -2,8 +2,25 @@
 
     {% block content %}
 
-        <h1 class="text-center mt-5">
-            THIS IS THE START OF MY PROJECT!!!! GET EXCITED FOO
-        </h1>
+   
+    <h1 class='text-center my-5'>Hello World</h1>
+    <div class="card mx-auto" style="max-width: 700px">
+        <div class="row g-2">
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title">THIS IS WHERE YOU WILL SIGN UP OR LOG IN</h5>
+                    <p class="card-text">I think this is going to be more a slider</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class='d-flex justify-content-around'>
+                        <a class='btn btn-primary' href='/signup'> Sign up</a>
+                        <a class='btn btn-primary'to='/login'> Log In</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="https://unsplash.it/600/400" class="img-fluid rounded-start" alt="..." />
+            </div>
+        </div>
+    </div>
 
     {% endblock content %}

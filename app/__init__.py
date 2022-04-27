@@ -28,4 +28,4 @@ app.register_blueprint(api)
 from app.blueprints.desc import desc 
 app.register_blueprint(desc)
 
-from app import routes, models
+from app import routes
