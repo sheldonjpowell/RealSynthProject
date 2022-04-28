@@ -14,7 +14,7 @@ class SliderForm(FlaskForm):
     waveforms = DecimalRangeField('waveform',validators=[NumberRange(min=0, max=3 )])
     save = SubmitField('Save')
     apply = SubmitField('Apply')
-    delete = SubmitField('Delete')
+    # delete = SubmitField('Delete')
     dropdown = SelectField('Dropdown',choices=[('1','Preset1'),('2','Preset2'),('3','Preset3'),('4','Preset4'),('5','Preset5')])
 
 
@@ -28,7 +28,7 @@ class SliderForm(FlaskForm):
 #     form.group_id.choices = [(g.id, g.name) for g in Group.query.order_by('name')]
 
 
-def ApplyPresets(request, id):
-    presets = Presets.query.get(id)
-    form = SliderForm(request.POST, obj=presets)
-    form.dropdown.choices = [(d.id, d.name) for d in Dropdown.query.order_by('name')]
+# def ApplyPresets(request, id):
+#     presets = Presets.query.get(id)
+#     form = SliderForm(request.POST, obj=presets)
+#     form.dropdown.choices = [(d.id, d.name) for d in Dropdown.query.order_by('name')]

@@ -4,14 +4,6 @@
     <body>
         
         
-        <div>
-            <select>
-                {% for p in preset %}
-                <option value="{{ p }}">{{ p }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        
         <form action="" method="post">
             {{ form.csrf_token }}
             
@@ -60,7 +52,6 @@
             </div>
             {{ form.save(class="btn btn-success")}}
             {{ form.apply(class="btn btn-success")}}
-            {{ form.delete(class="btn btn-success")}}
 
     </form>
 

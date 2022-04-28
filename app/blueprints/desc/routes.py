@@ -29,6 +29,7 @@ def synth():
     # Presets = {}
     title = 'synth'
     form = SliderForm()
+    preset = Presets.query.first()
     # presets = Presets.query.get(id)
 
 
@@ -44,14 +45,15 @@ def synth():
         waveforms = form.waveforms.data
         save = form.save.data
         apply = form.apply.data
-        delete = form.delete.data
+        # delete = form.delete.data
         dropdown = int(form.dropdown.data)
         
-        print(f'Save: {save} Apply: {apply} Delete: {delete}')
+        print(f'Save: {save}, Apply: {apply}')
         if save == True:
             user = User.query.first()
             check = Presets.query.filter_by(user_id = current_user.id).filter_by(preset_number=dropdown).first()
-            print(check,'SOMTHING RANDOM')
+           
+            
             if check:
                 check.volume=volume 
                 check.octave=octave 
@@ -68,16 +70,37 @@ def synth():
             
             # print(p, volume, octave, attack, decay, sustain,release,waveforms)
         elif apply == True:
-            
-            user = User.query.first()
+            preset =Presets.query.filter((Presets.preset_number==form.dropdown.data) & (Presets.user_id==current_user.id)).first()
 
-        elif delete == True:
-            p = Presets(user_id=current_user.id, volume=volume, octave=octave, attack=attack, decay=decay, sustain=sustain, release= release, waveforms=waveforms)
-            print(p.query.filter_by())
+        else:
+            p = Presets(user_id=current_user.id, volume=volume, octave=octave, attack=attack, decay=decay, sustain=sustain, release= release, waveforms=waveforms, preset_number=dropdown)
+            
+
+            # p = Presets(user_id=current_user.id, volume=volume, octave=octave, attack=attack, decay=decay, sustain=sustain, release= release, waveforms=waveforms, preset_number=dropdown)
+
+
+
+        # elif delete == True:
+        #     check = Presets.query.filter_by(user_id = current_user.id).filter_by(preset_number=dropdown).first()
+           
+            
+        #     if check:
+        #         check.volume=volume 
+        #         check.octave=octave 
+        #         check.attack=attack 
+        #         check.decay=decay 
+        #         check.sustain=sustain
+        #         check.release=release
+        #         check.waveforms=waveforms
+        #         db.session.delete(check)
+        #         db.session.commit()
+        #         print(Presets.query.all)
+        #     else:
+        #         p = Presets(user_id=current_user.id, volume=volume, octave=octave, attack=attack, decay=decay, sustain=sustain, release= release, waveforms=waveforms, preset_number=dropdown)
     
 
-    preset = current_user.preset.all()
+    
     # presets = Presets.query.get()
-    print(preset)
+    # print(preset)
 
     return render_template('synth_test.html', title = title, form=form, preset=preset)
