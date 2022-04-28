@@ -8,10 +8,10 @@ from datetime import datetime
 class Presets(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    volume = db.Column(db.Numeric(5), unique=False, nullable=False)
+    volume = db.Column(db.Float(5), unique=False, nullable=False)
     octave = db.Column(db.Float(5), unique=False, nullable=False)
     attack = db.Column(db.Float(5), unique=False, nullable=False)
-    decay = db.Column(db.Float(5), unique=False, nullable=False)
+    decay = db.Column(db.Numeric(10), unique=False, nullable=False)
     sustain = db.Column(db.Numeric(10), unique=False, nullable=False)
     release = db.Column(db.Float(5), unique=False, nullable=False)
     waveforms = db.Column(db.Float(5), unique=False, nullable=False)
