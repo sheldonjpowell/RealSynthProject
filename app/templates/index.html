@@ -2,23 +2,22 @@
 
     {% block content %}
 
-   
-    <h1 class='text-center my-5'>Hello World</h1>
-    <div class="card mx-auto" style="max-width: 700px">
+    <div id="signupcard" class="card mx-auto">
         <div class="row g-2">
             <div class="col-md-6">
-                <div class="card-body">
-                    <h5 class="card-title">THIS IS WHERE YOU WILL SIGN UP OR LOG IN</h5>
-                    <p class="card-text">I think this is going to be more a slider</p>
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4 ">Welcome to<br> <strong>HONEY BEAR'S SYNTH </strong></h5>
+                    <p class="overflow-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit inventore facere nulla, hic repellat commodi voluptatibus in, harum eaque excepturi consectetur fuga, similique voluptatum asperiores? Similique culpa sit facilis nemo.</p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <div class='d-flex justify-content-around'>
-                        <a class='btn btn-primary' href='/signup'> Sign up</a>
-                        <a class='btn btn-primary'to='/login'> Log In</a>
+                    <div id="uptons" class='d-flex justify-content-center'>
+                        <a class='btn btn-primary mx-3' href='/signup'> Sign up</a>
+                        
+                        <a class='btn btn-primary mx-3'to='/login'> Log In</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <img src="https://unsplash.it/600/400" class="img-fluid rounded-start" alt="..." />
+            <div id="image" class="col-md-6">
+                <img src="/app/static/img/synth-banner.png" class="img-fluid rounded-start" alt="..." />
             </div>
         </div>
     </div>
