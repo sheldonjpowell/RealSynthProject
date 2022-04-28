@@ -35,51 +35,51 @@
                 <!-- <div class=""> -->
                     <!-- IF YOU EDIT VALUE PARAMETERS GO TO FORMS AND STATIC -->
                     <!--  VOLUME   -->
-                    <div id="volume" >
-                        <div class="col-lg-2">
-                            <p class="ms-4">Volume</p>
+                    <div id="sliders">
+                        <div id="vbg" class="col-lg-2">
+                            <p class="">Volume</p>
                             {{ form.volume(className='volumeSlider',id='volume',min="0", max=".1", step=".001", value=preset.volume)}}
                         </div>
                         
                         <!--  OCTAVE   -->
-                        <div id="octave" class="col-lg-2">
-                            <p class="ms-4 mt-2">+ OCTAVE -</p>
+                        <div id="obg"class="col-lg-2">
+                            <p class="">+ OCTAVE -</p>
                             {{ form.octave(className='octSlider',id='oct',min="0", max="2", step="1", value=preset.octave)}}
                         </div>
 
                         <!-- ATTACK -->
-                        <div id="attack" class="col-lg-2">
-                            <p class="ms-4 mt-2">ATTACK</p>
+                        <div id="abg" class="col-lg-2">
+                            <p class="">ATTACK</p>
                             {{ form.attack(className='attackSlider',id='attk',min=".001", max=".5", step="0.001", value=preset.attack)}}
                         </div>
 
                         <!-- DECAY -->
-                        <div id="decay" class="col-lg-2">
-                            <p class="ms-4 mt-2">DECAY</p>
+                        <div id="dbg" class="col-lg-2">
+                            <p class="">DECAY</p>
                             {{ form.decay(className='decaySlider',id='decay',min=".001", max=".3", step="0.01", value=preset.decay)}}
                         </div>
 
                         <!-- SUSTAIN -->
-                        <div id="sustain" class="col-lg-2">
-                            <p class="ms-4 mt-2">SUSTAIN</p>
+                        <div id="sbg" class="col-lg-2">
+                            <p class="">SUSTAIN</p>
                             {{ form.sustain(className='sustainSlider',id='sus',min="400", max="200000", step="1", value=preset.sustain)}}
                         </div>
 
                         <!-- RELEASE -->
-                        <div id="release" class="col-lg-2">
-                            <p class="ms-4 mt-2">RELEASE</p>
+                        <div id="rbg" class="col-lg-2">
+                            <p class="">RELEASE</p>
                             {{ form.release(className='releaseSlider',id='reles',min="0.5", max="2.5", step="0.01", value=preset.release)}}
                         </div>
 
                         <!-- THIS IS WAVEFORM SLIDER -->
-                        <div id="waveforms"class="col-lg-2">
-                            <p class="ms-4 mt-2">WAVEFORM</p>
-                            {{ form.waveforms(className='waveSlider',min="0", max="3", step="1", value=preset.waveforms)}}
+                        <div id="wbg" class="col-lg-2">
+                            <p class="">WAVEFORM</p>
+                            {{ form.waveforms(className='waveSlider' ,id='wave' ,min="0", max="3", step="1", value=preset.waveforms)}}
                         </div>
                 <!-- </div> -->
             <!-- </div> -->
-            {{ form.save(class="btn btn-success")}}
-            {{ form.apply(class="btn btn-success")}}
+            {{ form.save(class="btn btn-dark m-5")}}
+            {{ form.apply(class="btn btn-dark")}}
 
     </form>
 

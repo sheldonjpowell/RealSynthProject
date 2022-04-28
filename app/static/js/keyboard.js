@@ -24,7 +24,7 @@ const keys = {
     P: { element: getElementByNote("D#2"), note: "D#", octaveOffset: 1 },
     semicolon: { element: getElementByNote("E2"), note: "E", octaveOffset: 1 }
   };
-
+  
   const getHz = (note = "A", octave = 4) => {
     const A4 = 440;
 
