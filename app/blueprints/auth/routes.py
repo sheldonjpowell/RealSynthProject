@@ -8,14 +8,16 @@ from .models import User
 def signup():
     title = "Sign Up"
     form = SignUpForm()
-
+    
     if form.validate_on_submit():
         email = form.email.data 
         username = form.username.data 
         password = form.password.data 
+        print( 'hello')
 
      
-        user_already_exists = User.query.filter((User.username.ilike(username)) | (User.email.ilike(email))).all()
+        # user_already_exists = User.query.filter((User.username.ilike(username)) | (User.email.ilike(email))).all()
+        user_already_exists = User.query.filter((User.username==username)|(User.email==email)).all()
         if user_already_exists:
             # If taken, flash warning message, redirect
             flash("That username or email is already in use, please try again.", "danger")
@@ -24,7 +26,7 @@ def signup():
         new_user = User(email = email, username = username, password = password)
         flash(f"{new_user} has been created!", "success")
         login_user(new_user)
-        return redirect(url_for('index'))
+        return redirect(url_for('auth.login'))
     return render_template('signup.html', title = title, form = form)
 
 @auth.route('/login', methods = ['GET', 'POST'])
