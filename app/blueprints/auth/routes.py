@@ -4,6 +4,8 @@ from . import auth
 from .forms import SignUpForm, LogInForm 
 from .models import User
 
+# NOTES FOR FEXT TIME I COME IN: THIS DOENS'T CURRENTLY WORK, I THINK IT BECAUE OF THE DATABASE BUT 
+# WHEN IT GOES THROUGH IT DOESNT VALIDATE
 @auth.route('/signup', methods = ['GET', 'POST'])
 def signup():
     title = "Sign Up"
