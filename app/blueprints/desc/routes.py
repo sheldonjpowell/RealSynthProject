@@ -29,8 +29,15 @@ def synth():
     # Presets = {}
     title = 'synth'
     form = SliderForm()
-    preset = Presets.query.first()
+    
     # presets = Presets.query.get(id)
+    volume = form.volume.data
+    octave = form.octave.data
+    attack = form.attack.data
+    decay = form.decay.data
+    sustain = form.sustain.data
+    release = form.release.data
+    waveforms = form.waveforms.data
 
 
     print('hello')
@@ -47,6 +54,7 @@ def synth():
         apply = form.apply.data
         # delete = form.delete.data
         dropdown = int(form.dropdown.data)
+        print(decay)
         
         print(f'Save: {save}, Apply: {apply}')
         if save == True:
@@ -99,7 +107,7 @@ def synth():
         #         p = Presets(user_id=current_user.id, volume=volume, octave=octave, attack=attack, decay=decay, sustain=sustain, release= release, waveforms=waveforms, preset_number=dropdown)
     
 
-    
+    preset = Presets.query.first()
     # presets = Presets.query.get()
     # print(preset)
 

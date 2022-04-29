@@ -2,15 +2,21 @@
 
     {% block content %}
     <body>
+        <div>
+            <h1 class="text-center mt-4">Couple Quick Tips to Before you start </h1>
+            <h4 class="text-center">1: Check volume, middle is normal </h4>
+            <h4 class="text-center">2: Presets are pre-loaded. But you are able to save what <br>you made by overwriting desired preset </h4>
+            <h4>3: have fun and Enjoy Honey Bear's synthesizer</h4>
+        </div>
         
         
         <form action="" method="post">
             {{ form.csrf_token }}
             
-            {{form.dropdown}}
-
+            
             <!-- KEYBOARD AND NOTES -->
             <ul id="keyboard">
+                {{form.dropdown}}
                 <li note="C" class="white">A</li>
                 <li note="C#" class="black">W</li>
                 <li note="D" class="white offset">S</li>
@@ -28,6 +34,7 @@
                 <li note="D2" class="white offset">L</li>
                 <li note="D#2" class="black">P</li>
                 <li note="E2" class="white offset">;</li>
+                
             </ul>
 
 
@@ -36,50 +43,57 @@
                     <!-- IF YOU EDIT VALUE PARAMETERS GO TO FORMS AND STATIC -->
                     <!--  VOLUME   -->
                     <div id="sliders">
-                        <div id="vbg" class="col-lg-2">
+                        <div id="vbg" class="">
                             <p class="">Volume</p>
                             {{ form.volume(className='volumeSlider',id='volume',min="0", max=".1", step=".001", value=preset.volume)}}
                         </div>
                         
                         <!--  OCTAVE   -->
-                        <div id="obg"class="col-lg-2">
+                        <div id="obg"class="">
                             <p class="">+ OCTAVE -</p>
                             {{ form.octave(className='octSlider',id='oct',min="0", max="2", step="1", value=preset.octave)}}
                         </div>
 
                         <!-- ATTACK -->
-                        <div id="abg" class="col-lg-2">
+                        <div id="abg" class="">
                             <p class="">ATTACK</p>
                             {{ form.attack(className='attackSlider',id='attk',min=".001", max=".5", step="0.001", value=preset.attack)}}
                         </div>
 
                         <!-- DECAY -->
-                        <div id="dbg" class="col-lg-2">
+                        <div id="dbg" class="">
                             <p class="">DECAY</p>
-                            {{ form.decay(className='decaySlider',id='decay',min=".001", max=".3", step="0.01", value=preset.decay)}}
+                            {{ form.decay(className='decaySlider',id='decay',min=".05", max=".3", step="0.02", value=preset.decay)}}
                         </div>
 
                         <!-- SUSTAIN -->
-                        <div id="sbg" class="col-lg-2">
+                        <div id="sbg" class="">
                             <p class="">SUSTAIN</p>
-                            {{ form.sustain(className='sustainSlider',id='sus',min="400", max="200000", step="1", value=preset.sustain)}}
+                            {{ form.sustain(className='sustainSlider',id='sus',min="400", max="200000", step="10", value=preset.sustain)}}
                         </div>
 
                         <!-- RELEASE -->
-                        <div id="rbg" class="col-lg-2">
+                        <div id="rbg" class="">
                             <p class="">RELEASE</p>
                             {{ form.release(className='releaseSlider',id='reles',min="0.5", max="2.5", step="0.01", value=preset.release)}}
                         </div>
 
                         <!-- THIS IS WAVEFORM SLIDER -->
-                        <div id="wbg" class="col-lg-2">
+                        <div id="wbg" class="">
                             <p class="">WAVEFORM</p>
                             {{ form.waveforms(className='waveSlider' ,id='wave' ,min="0", max="3", step="1", value=preset.waveforms)}}
                         </div>
+                        
                 <!-- </div> -->
             <!-- </div> -->
-            {{ form.save(class="btn btn-dark m-5")}}
-            {{ form.apply(class="btn btn-dark")}}
+                        <div id="save" class="py-2">
+                            {{ form.save(class="btn btn-dark w-100")}}
+                        </div>
+                        <div id="apply">
+                            {{ form.apply(class="btn btn-success w-100")}}
+                        </div>
+                       
+
 
     </form>
 

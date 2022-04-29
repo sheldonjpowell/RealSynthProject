@@ -6,18 +6,19 @@
         <div class="row g-2">
             <div class="col-md-6">
                 <div class="card-body text-center">
-                    <h5 class="card-title mb-4 ">Welcome to<br> <strong>HONEY BEAR'S SYNTH </strong></h5>
-                    <p class="overflow-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit inventore facere nulla, hic repellat commodi voluptatibus in, harum eaque excepturi consectetur fuga, similique voluptatum asperiores? Similique culpa sit facilis nemo.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <div id="uptons" class='d-flex justify-content-center'>
-                        <a class='btn btn-primary mx-3' href='/signup'> Sign up</a>
+                    <h4 class="card-title mb-4 ">Welcome to<br> <strong>HONEY BEAR'S SYNTH </strong></h4>
+                    <p class="overflow-auto">A synthesizer (also spelled <strong>synthesiser</strong>) is an electronic musical instrument that generates audio signals. Synthesizers typically create sounds by generating waveforms, through methods including subtractive synthesis, additive synthesis and frequency modulation synthesis.</p>
+                    <h5 class="overflow-auto">If you are ready to play with the Synth <br> Sign up or Login</h5>
+                    
+                    <div id="uptons" class='d-flex justify-content-center mt-4'>
+                        <a class='btn btn-dark mx-3' href="{{ url_for('auth.signup') }}"> Sign up</a>
                         
-                        <a class='btn btn-primary mx-3'to='/login'> Log In</a>
+                        <a class='btn btn-dark mx-3' href="{{ url_for('auth.login') }}"> Log In</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <img src="https://unsplash.it/600/400" class="img-fluid rounded-start" alt="..." />
+            <div class="col-md-6 mt-5">
+                <img src="../static/img/synths-dribbble.webp" class="img-fluid rounded-start" alt="..." />
             </div>
         </div>
     </div>

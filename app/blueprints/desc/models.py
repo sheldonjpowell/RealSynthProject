@@ -11,7 +11,7 @@ class Presets(db.Model, UserMixin):
     volume = db.Column(db.Float(5), unique=False, nullable=False)
     octave = db.Column(db.Float(5), unique=False, nullable=False)
     attack = db.Column(db.Float(5), unique=False, nullable=False)
-    decay = db.Column(db.Numeric(10), unique=False, nullable=False)
+    decay = db.Column(db.Float(10), unique=False, nullable=False)
     sustain = db.Column(db.Numeric(10), unique=False, nullable=False)
     release = db.Column(db.Float(5), unique=False, nullable=False)
     waveforms = db.Column(db.Float(5), unique=False, nullable=False)
