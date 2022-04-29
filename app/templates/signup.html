@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div id="cool" class="card">
+    <img src="../static/img/synth-banner.png" alt="">
+</div>
 <div id="signup" class="row justify-content-center">
     <div class="col-5 ">
-        <form method="POST ">
+        <form method="post ">
             {{ form.csrf_token }}
             
             <div class="form-group mt-5">
