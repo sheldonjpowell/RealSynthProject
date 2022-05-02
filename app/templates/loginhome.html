@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+
+    <div id="signupcard" class="card mx-auto">
+        <div class="row g-2">
+            <div class="col-md-6">
+                <div class="card-body text-center">
+                    <h4 class="card-title mb-4 ">Welcome to<br> <strong>HONEY BEAR'S SYNTH </strong></h4>
+                    <p class="overflow-auto">A synthesizer (also spelled <strong>synthesiser</strong>) is an electronic musical instrument that generates audio signals. Synthesizers typically create sounds by generating waveforms, through methods including subtractive synthesis, additive synthesis and frequency modulation synthesis.</p>
+                    <h5 class="overflow-auto">If you are ready to play with the Synth <br> Sign up or Login</h5>
+                    
+                    <div class='d-flex justify-content-center mt-4'>
+                        <a class='btn btn-dark mx-3' href="{{ url_for('desc.synth') }}"> Synth</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-5">
+                <img src="../static/img/synths-dribbble.webp" class="img-fluid rounded-start" alt="..." />
+            </div>
+        </div>
+    </div>
+
+    {% endblock content %}

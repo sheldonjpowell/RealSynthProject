@@ -10,22 +10,24 @@ from .models import User
 def signup():
     title = "Sign Up"
     form = SignUpForm()
-    
+    print("before Validate")
+
     if form.validate_on_submit():
         email = form.email.data 
         username = form.username.data 
-        password = form.password.data 
-        print( 'hello')
+        password = form.password.data
+        print("after Validate") 
 
      
-        # user_already_exists = User.query.filter((User.username.ilike(username)) | (User.email.ilike(email))).all()
-        user_already_exists = User.query.filter((User.username==username)|(User.email==email)).all()
+        user_already_exists = User.query.filter((User.username.ilike(username)) | (User.email.ilike(email))).all()
         if user_already_exists:
             # If taken, flash warning message, redirect
+            print("If already a user")
             flash("That username or email is already in use, please try again.", "danger")
             return render_template('signup.html', title=title, form=form)
         
         new_user = User(email = email, username = username, password = password)
+        print("New User")
         flash(f"{new_user} has been created!", "success")
         login_user(new_user)
         return redirect(url_for('auth.login'))
@@ -44,7 +46,7 @@ def login():
         if user and user.check_password(password):
             login_user(user)
             flash(f"{user} has successfully logged in.", "success")
-            return redirect(url_for('desc.synth'))
+            return redirect(url_for('desc.loginhome'))
         else:
             flash("Username and/or password is incorrect.")
     return render_template('login.html', title=title, form=form)

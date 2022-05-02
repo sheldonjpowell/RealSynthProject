@@ -19,6 +19,12 @@ def about():
 
     return render_template('about.html', title = title)
 
+@desc.route('/loginhome')
+def loginhome():
+    title = 'Login Home'
+
+    return render_template('loginhome.html', title = title)
+
     
     
 @desc.route('/synth', methods = ['GET', 'POST'])
