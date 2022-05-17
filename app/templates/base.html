@@ -18,15 +18,15 @@
     
     <body>
         <nav id="navbarid" class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
+            <a id="HB" class="navbar-brand " href="/app/templates/index.html">Honey Bear's Synth</a>
+            <!-- <div class="container"> -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a id="HB" class="navbar-brand px-5" href="/app/templates/index.html">Honey Bear's Synth</a>
                 <div class="collapse " id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" href="{{ url_for('desc.index') }}">Home</a>
-                        <a class="nav-link mx-3" href="{{ url_for('desc.about') }}">About</a> 
+                        <a class="nav-link" href="{{ url_for('desc.about') }}">About</a> 
                     </div>
                     
                     
@@ -40,38 +40,38 @@
                         {% endif %}
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </nav>
-
-
-
+        
+        
+        
         <div class="container">
             {% include 'alert_message.html' %}
             {% block content %}
             {% endblock content %}
         </div>
         
-
-
-
+        
+        
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+        <footer class="bg-dark text-center text-lg-start jkl;expand-lg" >
+            <div class="text-center">
+                <!-- <section class="py-3"> -->
+                    <!-- Linkedin --> 
+                    <a class="btn btn-outline-light btn-floating m-3" href="https://www.linkedin.com/in/sheldonpowell/" role="button"><i class="fab fa-linkedin-in"></i></a>
+    
+                    <!-- Github --> 
+                    <a class="btn btn-outline-light btn-floating " href="https://github.com/sheldonjpowell" role="button"><i class="fab fa-github"></i></a>
+                <!-- </section> -->
+            </div>
+            <div class="text-center text-white">
+                © 2020 Copyright: 
+                <a class="text-white" href="#">HBS.com</a>
+            </div>
+        </footer>
     </body>
-    <footer class="">
-        <div class="text-center">
-            <section class="py-3">
-                <!-- Linkedin --> 
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/sheldonpowell/" role="button"><i class="fab fa-linkedin-in"></i></a>
-
-                <!-- Github --> 
-                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/sheldonjpowell" role="button"><i class="fab fa-github"></i></a>
-            </section>
-        </div>
-        <div class="text-center text-white">
-            © 2020 Copyright: 
-            <a class="text-white" href="#">HBS.com</a>
-        </div>
-    </footer>
 
 
 
