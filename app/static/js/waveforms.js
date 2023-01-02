@@ -5,4 +5,3 @@ const WAVEFORMS = {
     3:'triangle'
 };
 
-console.log("hello")
